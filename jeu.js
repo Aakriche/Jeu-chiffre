@@ -82,8 +82,7 @@ function newJeu (){
 
 
         nbrD = document.getElementById('propInp');
-        console.log(nbrD.value);
-        console.log(nbrX);
+
 
         if ((parseInt(nbrD.value) > 0) && (parseInt(nbrD.value) < 100)) {
 
@@ -102,6 +101,8 @@ function newJeu (){
             if (chances > 7 ) { 
 
                 finDuGame();
+                clearTimeout(t);
+                clearTimeout(t2);
                 alert('perdu, le nombre mystère était : ' + nbrX)
                 
             }
