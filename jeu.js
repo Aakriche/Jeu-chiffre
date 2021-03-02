@@ -11,17 +11,22 @@ function newJeu (){
 
     nbrX = Math.floor(Math.random() * 100); // Random number generation
     var indiceInp = document.querySelector("#indInp"); // Input for clues
-    var repInp = document.querySelector("#repInp"); // Input for answers
+    var repInp = document.querySelector("#repInp"); // Input for already typed answers
     var tryInp = document.querySelector("#tryInp"); // Input for number of tries
     var chances = 2; //Var for chances
     var propo = document.querySelector('#propBtn'); // Proposition Button
     var soluce = document.querySelector('#solBtn'); // Solution Button
+    var t = 0; //Visible timer
+    var c = 0;
+    var t2 = 0; // Hidden timer
     
     //Clear all input and disable readOnly
     indiceInp.value=""; 
     repInp.value="";
     tryInp.value="";
     nbrD.readOnly = false;
+    clearTimeout(t); //reset timer for game ending
+    clearTimeout(t2);
     
     // Disable / enable buttons 
     document.querySelector('#solBtn').disabled = false;
@@ -32,11 +37,11 @@ function newJeu (){
     //Function for game ending
     function finDuGame() {
         
-        //Clear all
+        // Clear and reset all
         indiceInp.value="";
         repInp.value="";
         tryInp.value="";
-        chances =2;
+        chances=2;
         nbrD.value = '';
         document.querySelector('#solBtn').disabled = true;
         document.querySelector('#propBtn').disabled = true;
@@ -49,9 +54,7 @@ function newJeu (){
 
 
 
-    var t = 0; //Visible timer
-    var c = 0;
-    var t2 = 0; // Hidden timer
+
 
     // Function for Visible timer
     function timedCount() {
