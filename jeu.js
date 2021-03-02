@@ -70,7 +70,7 @@ function newJeu (){
        
         alert("Temps écoulé, le nombre mystère était " + nbrX);
         finDuGame();
-      }
+    }
 
     timedCount();
     t2 = setTimeout(stopCount, 30000);
@@ -92,6 +92,8 @@ function newJeu (){
             if ((parseInt(nbrD.value) == nbrX)) {
 
             finDuGame();
+            clearTimeout(t);
+            clearTimeout(t2);
             alert("C'est gagné !");
             
 
