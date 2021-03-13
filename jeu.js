@@ -170,3 +170,8 @@ document.querySelector('#propBtn').disabled = true; //Disable proposition button
 var newBtn = document.querySelector('#newBtn'); // Button for New game
 newBtn.addEventListener("click", newJeu); // Clicking for a New Game
 
+document.querySelector('#propInp').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      proposition();
+    }
+});
