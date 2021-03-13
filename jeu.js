@@ -161,6 +161,12 @@ function solution(){
 var soluce = document.querySelector('#solBtn'); // Solution Button
 soluce.addEventListener("click", solution); // Clicking solution
 propo.addEventListener("click", proposition); // Clicking Proposition
+// Enter proposition
+document.querySelector('#propInp').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      proposition();
+    }
+});
 
 
 document.querySelector('#solBtn').disabled = true;  //Disable solution button out of a game
@@ -170,8 +176,4 @@ document.querySelector('#propBtn').disabled = true; //Disable proposition button
 var newBtn = document.querySelector('#newBtn'); // Button for New game
 newBtn.addEventListener("click", newJeu); // Clicking for a New Game
 
-document.querySelector('#propInp').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-      proposition();
-    }
-});
+
