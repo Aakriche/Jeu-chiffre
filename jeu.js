@@ -1,4 +1,4 @@
-var nbrD = document.getElementById('propInp') //User input number
+var nbrD = document.getElementById('propInp'); //User input number
 nbrD.readOnly = true; //input field, Default: readOnly
 var propo = document.querySelector('#propBtn'); // Proposition Button
 var soluce = document.querySelector('#solBtn'); // Solution Button
@@ -9,6 +9,7 @@ let chances = 2; //Var for chances
 let t = 0; //Visible timer
 let c = 0;// Visible timer
 let t2 = 0; // Hidden timer
+var nbrX;
 
 // Function for new game
 function newJeu (){
@@ -24,8 +25,6 @@ function newJeu (){
     repInp.value="";
     tryInp.value="";
     nbrD.readOnly = false;
-    // clearTimeout(t); //reset timer for game ending
-    // clearTimeout(t2);
     
     // Disable / enable buttons 
     document.querySelector('#solBtn').disabled = false;
@@ -53,11 +52,9 @@ function proposition(){
 
         
         // If win
-        if ((parseInt(nbrD.value) == nbrX)) {
+        if (parseInt(nbrD.value) === nbrX) {
 
         finDuGame();
-        // clearTimeout(t);
-        // clearTimeout(t2);
         alert("C'est gagné !");
         
 
@@ -66,8 +63,6 @@ function proposition(){
         if (chances > 7 ) { 
 
             finDuGame();
-            // clearTimeout(t);
-            // clearTimeout(t2);
             alert('perdu, le nombre mystère était : ' + nbrX)
             
         }
@@ -158,7 +153,7 @@ function solution(){
 }
     
     
-var soluce = document.querySelector('#solBtn'); // Solution Button
+
 soluce.addEventListener("click", solution); // Clicking solution
 propo.addEventListener("click", proposition); // Clicking Proposition
 // Enter proposition
